@@ -26,7 +26,7 @@
     </body>
 
     <footer class="bg-blue-600 h-24">
-         
+         esrtdyugiojprtdyugi
     </footer>
 
 </template>

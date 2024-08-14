@@ -9,31 +9,35 @@ import show_todo from '@/components/show_todo.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/home',
-      name: 'home',
-      component: HomeView
-    },
+    // {
+    //   path: '/home',
+    //   name: 'home',
+    //   component: HomeView
+    // },
     {
       path: '/register',
       name: 'register',
       component: Sign_up
     },
+
     {
       path: '/login',
       name: 'login',
       component: Sign_in
     },
+
     {
       path: '/',
       name: 'todo',
       component: to_do
     },
+
     {
       path: '/todo',
       name: 'todo',
       component: todo_list
     },
+
     {
       path: '/showtodo',
       name: 'showtodo',

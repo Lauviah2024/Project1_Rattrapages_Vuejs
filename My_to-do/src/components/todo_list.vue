@@ -2,11 +2,6 @@
 import { useTasksStore } from '@/stores/tasks';
 import { ref } from 'vue';
 const store = useTasksStore();
-// var title = ref("");
-// var description = ref("");
-// var end_date = ref("");
-// var Start_date = ref("");
-// var priority = ref("");
 var mytask = ref({
     title: "",
     description: "",
