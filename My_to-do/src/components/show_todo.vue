@@ -22,7 +22,7 @@ function updtask(task) {
                 <div class="flex justify-between items-center" dir="rtl">
                     <div class="border-r-4 border-t-4 border-b-4 border-sky-500 rounded-s-full">
                         <div class="text-white text-xl font-bold h-16 w-96 p-4 hover:text-gray-700 md:text-3xl"><span
-                                class="m-5">My todo's app</span></div>
+                                class="m-5"><a href="/">My todo's app</a></span></div>
                     </div>
                     <div class="md:hidden">
                         <button type="button"

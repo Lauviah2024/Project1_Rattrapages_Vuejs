@@ -17,7 +17,36 @@ const addtask = () => {
 </script>
 
 <template>
-        <form @submit.prevent="addtask">
+    <nav class=" bg-black shadow" id="app">
+        <div class="container">
+            <div class="md:flex justify-between items-center">
+                <!-- left section -->
+                <div class="flex justify-between items-center" dir="rtl">
+                    <div class="border-r-4 border-t-4 border-b-4 border-sky-500 rounded-s-full">
+                        <div class="text-white text-xl font-bold h-16 w-96 p-4 hover:text-gray-700 md:text-3xl"><span
+                                class="m-5"><a href="/">My todo's app</a></span></div>
+                    </div>
+                    <div class="md:hidden">
+                        <button type="button"
+                            class="text-gray-500 hover:text-gray-600 focus:text-gray-600 focus:outline-none"
+                            @click="isOpen = !isOpen">
+                            <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
+                                <path
+                                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- right section -->
+                <div class="flex-col mt-3 md:flex-row md:mt-0 md:flex" :class="isOpen ? 'flex' : 'hidden'">
+                    <a href="/login" class="text-white font-bold text-3sm hover:font-medium md:mx-4">Login</a>
+                    <a href="/showtodo" class="text-white font-bold text-3sm hover:font-medium md:mx-4">My tasks</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <form @submit.prevent="addtask">
         <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
             <div class="relative py-3 sm:max-w-xl sm:mx-auto">
                 <div class="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
@@ -38,13 +67,13 @@ const addtask = () => {
                                     <label class="leading-loose">Task title</label>
                                     <input type="text" v-model="mytask.title"
                                         class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                                        placeholder="Task title...">
+                                        placeholder="Task title..." required>
                                 </div>
                                 <div class="flex flex-col">
                                     <label class="leading-loose">Task description</label>
                                     <textarea type="text" v-model="mytask.description"
                                         class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                                        placeholder="Describe your task..."></textarea>
+                                        placeholder="Describe your task..." required></textarea>
                                 </div>
                                 <div class="flex items-center space-x-4">
                                     <div class="flex flex-col">
@@ -85,15 +114,15 @@ const addtask = () => {
                                 <div class="flex flex-col">
                                     <label class="leading-loose">Priority</label>
                                     <select name="priority" id="selected" v-model="mytask.priority"
-                                        class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600">Priority
-                                        <option value="Done" selected>Done</option>
+                                        class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" required>Priority
+                                        <option value="Done">Done</option>
                                         <option value="Undone">Undone</option>
                                     </select>
 
                                 </div>
                             </div>
                             <div class="pt-4 flex items-center space-x-4">
-                                
+
                                 <button type="submit"
                                     class="bg-green-500 flex justify-center items-center w-full text-white px-4 py-3 rounded-md focus:outline-none hover:bg-green-600">Add</button>
                             </div>
