@@ -39,7 +39,7 @@ function verify() {
     }
 
     if (!validateemail(email.value) || !validateMDP(password.value)) {
-        isemailvalid.value = "Invalid input !"
+        isemailvalid.value = "Your mail or your password is not valid !"
         return false
     }
     else {
@@ -118,15 +118,17 @@ function verify() {
                 <div class="flex flex-col flex-1 justify-center mb-8">
                     <h1 class="text-4xl text-center font-thin">Register now</h1>
                     <div class="w-full mt-4">
+                        <span>{{ isemailvalid }}</span><br><br>
                         <form class="form-horizontal w-3/4 mx-auto" @submit.prevent="verify">
                             <div class="flex flex-col mt-4">
                                 <input id="email" v-model.trim="email" type="text" class="flex-grow h-8 px-2 border rounded border-grey-400" name="email" value="" placeholder="Email">
                             </div>
+                            <span>{{ ispasswordvalid }}</span><br>
                             <div class="flex flex-col mt-4">
                                 <input v-model.trim="password" id="password" type="password" class="flex-grow h-8 px-2 rounded border border-grey-400" name="password" required placeholder="Password">
-                            </div>
+                            </div><br>
                             <div class="flex flex-col mt-4">
-                                <input id="confirm password" v-model.trim="password_confirm" type="text" class="flex-grow h-8 px-2 border rounded border-grey-400" name="email" value="" placeholder="Confirm password">
+                                <input id="confirm password" v-model.trim="password_confirm" type="password" class="flex-grow h-8 px-2 border rounded border-grey-400" name="email" value="" placeholder="Confirm password">
                             </div>
                             <div class="flex flex-col mt-8">
                                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded">

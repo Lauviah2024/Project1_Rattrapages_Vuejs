@@ -10,9 +10,18 @@ var mytask = ref({
     priority: ""
 })
 
+var inputempty = ref("")
+
 const addtask = () => {
     console.log(mytask.value.title, mytask.value.description, mytask.value.end_date, mytask.value.Start_date, mytask.value.priority);
     store.createTask(mytask.value.title, mytask.value.description, mytask.value.end_date, mytask.value.Start_date, mytask.value.priority);
+}
+
+function verify(){
+    // Verify if it is empty
+    if(mytask.value.title || mytask.value.description || mytask.value.end_date || mytask.value.Start_date || mytask.value.priority){
+        inputempty.value = "The fields can not be empty"
+    }
 }
 </script>
 
