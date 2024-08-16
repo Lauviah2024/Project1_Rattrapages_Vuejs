@@ -62,13 +62,13 @@ function updtask(task) {
                             <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
                                 <div class="flex flex-col">
                                     <label class="leading-loose">Task title</label>
-                                    <input type="text" v-model="task.title"
+                                    <input type="text" v-model.trim="task.title"
                                         class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                                         placeholder="Event title">
                                 </div>
                                 <div class="flex flex-col">
                                     <label class="leading-loose">Task description</label>
-                                    <textarea type="text" v-model="task.description"
+                                    <textarea type="text" v-model.trim="task.description"
                                         class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                                         placeholder="Optional"></textarea>
                                 </div>
@@ -76,7 +76,7 @@ function updtask(task) {
                                     <div class="flex flex-col">
                                         <label class="leading-loose">Start</label>
                                         <div class="relative focus-within:text-gray-600 text-gray-400">
-                                            <input type="date" v-model="task.startdate"
+                                            <input type="date" v-model.trim="task.startdate"
                                                 class="pr-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                                                 placeholder="25/02/2020" required>
                                             <div class="absolute left-3 top-2">
@@ -92,7 +92,7 @@ function updtask(task) {
                                     <div class="flex flex-col">
                                         <label class="leading-loose">End</label>
                                         <div class="relative focus-within:text-gray-600 text-gray-400">
-                                            <input type="date" v-model="task.enddate"
+                                            <input type="date" v-model.trim="task.enddate"
                                                 class="pr-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                                                 placeholder="26/02/2020" required>
                                             <div class="absolute left-3 top-2">
@@ -108,7 +108,7 @@ function updtask(task) {
                                 </div>
                                 <div class="flex flex-col">
                                     <label class="leading-loose">Priority</label>
-                                    <select name="priority" id="selected" v-model="task.priority" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600">Priority
+                                    <select name="priority" id="selected" v-model.trim="task.priority" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600">Priority
                                         <option value="Done" selected>Done</option>
                                         <option value="Undone">Undone</option>
                                     </select>
